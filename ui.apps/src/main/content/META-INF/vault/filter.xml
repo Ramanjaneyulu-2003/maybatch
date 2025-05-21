@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/May/clientlibs"/>
+    <filter root="/apps/May/components"/>
+    <filter root="/apps/May/i18n"/>
+</workspaceFilter>
