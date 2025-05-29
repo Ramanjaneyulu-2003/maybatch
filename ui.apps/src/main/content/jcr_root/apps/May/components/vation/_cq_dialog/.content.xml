@@ -9,18 +9,18 @@
             <text
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                fieldLabel="title"
-                name="./text"/>
+                fieldLabel="ArticleTitle"
+                name="./articletitle"/>
             <des
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                fieldLabel="description"
-                name="./des"/>
+                fieldLabel="ArticleDescription"
+                name="./articledesc"/>
             <number
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
-                fieldLabel="number"
-                name="./num"/>
+                fieldLabel="ArticleNum"
+                name="./articlenum"/>
             <checkbox
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"

@@ -1,9 +1,64 @@
 
-hello all
-<div data-sly-use.model="com.adobe.aem.may.batch.core.models.DemoModel"
+<head data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
 
-${model.Text}
+<!--/* for css+js */-->
+<meta data-sly-call="${clientLib.all @ categories='clientlib-digital'}" data-sly-unwrap></meta>
 
-${model.Description}
+<div data-sly-use.model=com.adobe.aem.may.batch.core.models.DigitalModel>
 
-${model.Num}
+${model.articletitle}<br>
+
+${model.articledesc}<br>
+
+${model.articlenum}<br>
+<h1>PageName: ${model.articleTitle}<br></h1>
+
+<h1>PagePath: ${model.articlePagePath}<br></h1>
+<h2>UserId: ${model.webContentNode}</h2>
+
+
+     <div data-sly-list.item11=${model.bookdetailswithmap}>
+    <h2 class="booktitle"> ${item11.bookname} </h2><br>
+     ${item11.booksubject}<br>
+     <div>${'yyyy-mm-dd HH:mm' @format=item11.bookpublishdate, timezone='UTC'}</div>
+
+        <div data-sly-list.item1=${item11.bookdetailswithwriter}>
+            ${item1.writername}<br>
+            ${item1.writernumber}<br>
+             <div>${'yyyy-mm-dd HH:mm' @format=item1.writerdob, timezone='UTC'}</div>
+             </div>
+
+
+
+    </div>
+
+</div>
+
+<h2>JavaScript Alert</h2>
+
+<button onclick="myFunction()">click me</button><br>
+ Data-sly-Test <br>
+ <div data-sly-include="raju.html"></div>
+ <div data-sly-resource="${footer @resourceType='May/components/footer'}"></div>
+ <div data-sly-set.items="${['java','js','reactjs']}"</div>
+ <ul data-sly-list="${items}">
+ <li> ${item}</li>
+ </ul>
+ <div data-sly-template.writer="${'write' @para1, para2, para3, para4}">
+ <h1> ${para1}</h1>
+ <h1> ${para2}</h1>
+ <h1> ${para3}</h1>
+ <h1> ${para4}</h1>
+
+ </div>
+ <div data-sly-call="${writer @para1='1300', para2='400', para3='700', para4='1100'}"></div>
+         <div data-sly-test=${10==10}>
+         <h1>Data coming from the Test Block </h1>
+ </div>
+     <p data-sly-text="${properties.jcr:description}">Lorem ipsum</p>
+     <div data-sly-unwrap> Surge</div><br>
+ <sly> DemoText </sly>
+            <div data-sly-text=${30==30}>Demo1</div>
+        <div title="Lorem Ipsum" data-sly-attribute.title="${40==40}">Demo Model</div>  
+        <h1 data-sly-element="${titleLevel}">text</h1>
+
