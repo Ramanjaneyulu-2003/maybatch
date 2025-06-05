@@ -12,7 +12,7 @@ import org.apache.sling.servlets.annotations.SlingServletPaths;
 import org.osgi.service.component.annotations.Component;
 
 @Component(service = Servlet.class,immediate = true,enabled = true)
-@SlingServletPaths(value = "/bin/demo/surge")
+@SlingServletPaths(value = "/ramu/demo/surge")
 public class DemoServlet extends SlingSafeMethodsServlet 
 {
     @Override
