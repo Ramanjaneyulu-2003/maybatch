@@ -1,0 +1,78 @@
+<form id="contactForm">
+  <input type="hidden" name="operation" value="create" />
+  <input type="hidden" name="nodeName" value="" />
+
+  <label>Name: <input type="text" name="name" required /></label><br/>
+  <label>Email: <input type="email" name="email" required /></label><br/>
+  <label>Mobile: <input type="tel" name="mobile" required /></label><br/>
+  <button type="submit">Submit</button>
+</form>
+
+<table id="contactsTable">
+  <!-- rows inserted by HTL Listing below -->
+</table>
+
+<script>
+  $("#contactForm").on("submit", function(e){
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/bin/contactCrud",
+      data: $(this).serialize(),
+      success: function(resp){
+        alert("Success");
+        location.reload();
+      },
+      error: function(){ alert("Error"); }
+    });
+  });
+
+  $("#contactsTable").on("click", ".delete", function(){
+    const node = $(this).data("node");
+    $.post("/bin/contactCrud", {operation:"delete", nodeName:node}, ()=>location.reload());
+  });
+
+  $("#contactsTable").on("click", ".edit", function(){
+    const node = $(this).data("node");
+    const name = $(this).data("name");
+    const email = $(this).data("email");
+    const mobile = $(this).data("mobile");
+    $("input[name=operation]").val("update");
+    $("input[name=nodeName]").val(node);
+    $("input[name=name]").val(name);
+    $("input[name=email]").val(email);
+    $("input[name=mobile]").val(mobile);
+  });
+</script>
+
+
+
+
+<sly data-sly-use.model="com.adobe.aem.may.batch.core.models.ContactListModel">
+<table>
+  <tr><th>Name</th><th>Email</th><th>Mobile</th><th>Actions</th></tr>
+  <sly data-sly-list.contact="${model.contacts}">
+    <tr>
+      <td>${contact.name}</td>
+      <td>${contact.email}</td>
+      <td>${contact.mobile}</td>
+      <td>
+        <button class="edit"
+           data-node="${contact.node}"
+           data-name="${contact.name}"
+           data-email="${contact.email}"
+           data-mobile="${contact.mobile}">Edit</button>
+        <button class="delete" data-node="${contact.node}">Delete</button>
+      </td>
+    </tr>
+  </sly>
+</table>
+</sly>
+
+
+
+
+   name = "Nani"
+   email = "nani@gmail.com"
+   mobile = "8930392098"
+

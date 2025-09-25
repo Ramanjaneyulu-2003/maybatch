@@ -11,21 +11,17 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                    <text
+                    <Enable_PII
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        fieldLabel="Enable PII"
+                        name="./enablepii"
+                        value="true"/>
+                    <CssClass
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Text"
-                        name="./text"/>
-                    <des
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                        fieldLabel="Des&#xa;"
-                        name="./des"/>
-                    <num
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
-                        fieldLabel="Number"
-                        name="./num"/>
+                        fieldLabel="Css Class"
+                        name="./cssclass"/>
                 </items>
             </column>
         </items>

@@ -1,0 +1,52 @@
+<div class="appointment-wrapper">
+  <h2>Schedule an appointment</h2>
+  <p>Hi [Name], Please enter your business details to schedule an appointment</p>
+
+  <div class="appointment-form">
+    <label for="refId">Unique reference ID</label>
+    <input type="text" id="refId" placeholder="Ex. 213563747" />
+    <button onclick="nextStep()">Confirm and continue</button>
+    <a href="#">Don’t have a Unique reference ID?</a>
+  </div>
+
+  <div class="appointment-dates" style="display:none;">
+    <h3>Select an appointment date</h3>
+    <div class="dates-list">
+      <button>02 DEC</button>
+      <button>03 DEC</button>
+      <button>04 DEC</button>
+      <!-- add more -->
+    </div>
+    <div class="time-slots">
+      <label>Select a slot:</label>
+      <select>
+        <option>08:00 - 17:00</option>
+        <option>09:00 - 18:00</option>
+      </select>
+    </div>
+    <button>Book this appointment</button>
+  </div>
+
+  <div class="info">
+    <p><strong>Important:</strong></p>
+    <ul>
+      <li>Openreach can provide ethernet provision quicker if the appointment is set early.</li>
+      <li>Some appointments can take an entire day. We will call you on the day of the appointment.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function nextStep() {
+    document.querySelector('.appointment-form').style.display = 'none';
+    document.querySelector('.appointment-dates').style.display = 'block';
+  }
+</script>
+
+<data-sly-resource resource="${'appointment-form' @ resourceType='May/components/appointment'}"/>
+
+
+<!-- Include JS clientlib -->
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='clientlib-modal'}"/>
+</sly>

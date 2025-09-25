@@ -1,0 +1,42 @@
+<div class="sai-component">
+
+    <!-- Theme Selection -->
+    <div class="theme-selection">
+        <p><strong>Theme:</strong> ${properties.themeSelection}</p>
+    </div>
+
+    <!-- Section Heading -->
+    <div class="section-heading">
+        <h2>${properties.sectionHeading}</h2>
+    </div>
+
+    <!-- Section Description -->
+    <div class="section-description">
+        <p>${properties.sectionDescription}</p>
+    </div>
+
+    <!-- Tags Selection -->
+    <div class="tags-selection">
+        <p><strong>Tags:</strong> ${properties.tagsSelection}</p>
+    </div>
+
+    <!-- Featured Page -->
+    <div class="featured-page">
+        <p><strong>Featured Page:</strong>
+            <a href="${properties.featuredPage @ context='uri'}">${properties.featuredPage}</a>
+            
+
+        </p>
+    </div>
+
+    <!-- Card Featured Image -->
+    <div class="card-featured-image">
+        <img src="${properties.cardFeaturedImage @ context='uri'}" alt="Card Featured Image" width="100px" height="100px"/>
+    </div>
+
+    <!-- Default Image -->
+    <div class="default-image">
+        <img src="${properties.defaultImage @ context='uri'}" alt="Default Image" width="100px" height="100px"/>
+    </div>
+
+</div>

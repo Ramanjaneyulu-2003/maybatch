@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabs
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                        Orientation="horizontal">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tab1
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Images Selection"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <name
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Name"
+                                        name="./name"/>
+                                    <images
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="SelectImages"
+                                        name="./images"
+                                        optionLoder="url"
+                                        optionUrl="&quot;/bin/images-dropdown&quot;"
+                                        type="select">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <birds
+                                                jcr:primaryType="nt:unstructured"
+                                                text="birds"
+                                                value="/content/dam/May/ramu/birds.jpg"/>
+                                            <peacock
+                                                jcr:primaryType="nt:unstructured"
+                                                text="peacock"
+                                                value="/content/dam/May/ramu/peacock.jpg"/>
+                                            <biryani
+                                                jcr:primaryType="nt:unstructured"
+                                                text="biryani"
+                                                value="/content/dam/May/ramu/biryani.jpg"/>
+                                            <dog
+                                                jcr:primaryType="nt:unstructured"
+                                                text="dog"
+                                                value="/content/dam/May/ramu/Dog.jpg"/>
+                                            <fruits
+                                                jcr:primaryType="nt:unstructured"
+                                                text="fruits"
+                                                value="/content/dam/May/ramu/fruits.jpg"/>
+                                            <vegetables
+                                                jcr:primaryType="nt:unstructured"
+                                                text="vegetables"
+                                                value="/content/dam/May/ramu/vegetables.jpg"/>
+                                            <tiger
+                                                jcr:primaryType="nt:unstructured"
+                                                text="tiger"
+                                                value="/content/dam/May/ramu/Tiger.jpg"/>
+                                            <dress
+                                                jcr:primaryType="nt:unstructured"
+                                                text="dress"
+                                                value="/content/dam/May/ramu/dress.jpg"/>
+                                            <pets
+                                                jcr:primaryType="nt:unstructured"
+                                                text="pets"
+                                                value="/content/dam/May/ramu/Pets.jpg"/>
+                                            <tiffins
+                                                jcr:primaryType="nt:unstructured"
+                                                text="tiffins"
+                                                value="/content/dam/May/ramu/Tiffins.jpg"/>
+                                        </items>
+                                    </images>
+                                </items>
+                            </tab1>
+                        </items>
+                    </tabs>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,46 @@
+
+
+
+ <h4>Task3</h4>
+ <h2>Header</h2>
+   <div data-sly-use.sidebar=com.adobe.aem.may.batch.core.models.Sidebar>
+      <img src=  "${sidebar.logoLink}" alt="hi" height="100px" width="100px"><br>
+       <img src=  "${sidebar.logoPath}" alt="hi" height="100px" width="100px"><br>
+        <img src= "${sidebar.logoMobile}" alt =hii" height="100px" width="100px"><br>
+
+   ${sidebar.enableSwitch }<br>
+
+    </div>
+
+
+
+   ${sidebar.enableSwitch }
+
+        <h3>Header Links</h3>
+
+            <div data-sly-list.header="${sidebar.header}">
+
+                    ${header.name}<br>
+                    ${header.image}<br>
+
+    </div>
+            <h3>SideBar Navigation</h3>
+
+        <div data-sly-list.side="${sidebar.side}">
+
+                ${side.desktopIcon}<br>
+                ${side.mobileIcon}<br>
+
+
+                    <div data-sly-list.nav="${side.navigation}">
+                       ${nav.navUrl}<br>
+             </div>
+    </div>
+
+     <h3> Region </h3>
+
+    <div class="sidebar-country">
+        ${sidebar.country}
+    </div>
+
+</div>

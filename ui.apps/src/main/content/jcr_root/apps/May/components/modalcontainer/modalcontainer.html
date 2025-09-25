@@ -1,0 +1,26 @@
+<h4>Test Modal</h4>
+
+<!-- Authoring container -->
+<div class="modelcontainer">
+    <sly data-sly-resource="${'modelcontainer' @ resourceType='May/components/container'}"></sly>
+</div>
+
+<!-- Modal -->
+<div id="${properties.id}" class="cmp-container modal-overlay-container" role="dialog" aria-hidden="true">
+    <div class="modal-content-hidden">
+        <!-- Close button -->
+        <button class="close-btn" aria-label="close">×</button>
+
+        <!-- Modal body: dynamic content goes here -->
+        <div class="modal-body">
+        </div>
+    </div>
+</div>
+
+<!-- Include JS clientlib -->
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='clientlib-modal'}"/>
+</sly>
+
+
+
