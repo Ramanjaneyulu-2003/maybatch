@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="myForm">
+        <input type="hidden" id="rowIndex">
+        <input type="text" id="param1" placeholder="Name"><br><br>
+        <input type="text" id="param2" placeholder="Email"><br><br>
+        <input type="text" id="param3" placeholder="Subject"><br><br>
+        <input type="text" id="param4" placeholder="Message"><br><br>
+        <div class="your-component" data-path="${resource.path @ context='unsafe'}"></div>
+        <button type="button" onclick="sendData()">Submit</button>
+    </form>
+
+    <div id="formDataTable"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='May'}"/>
+</sly>

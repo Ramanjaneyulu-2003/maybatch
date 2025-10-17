@@ -1,21 +1,26 @@
+console.log("hi");
 document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".open-modal-button");
-
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            const overlayId = this.getAttribute("data-overlay-id");
-            const modal = document.querySelector(#${overlayId} .modal-content);
+    console.log("hlo");
+    // Open modal
+    document.querySelectorAll('.open-modal').forEach(button => {
+        button.addEventListener('click', function () {
+            const modalId = this.getAttribute('data-modal-id');
+            const modal = document.getElementById(modalId);
             if (modal) {
-                modal.style.display = "block";
+                modal.setAttribute('aria-hidden', 'false');
+                modal.classList.add('show');
             }
         });
     });
 
     // Close modal
-    const closeButtons = document.querySelectorAll(".close-modal");
-    closeButtons.forEach(btn => {
-        btn.addEventListener("click", function () {
-            this.closest(".modal-content").style.display = "none";
+    document.querySelectorAll('.close-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const modal = this.closest('.modal-overlay-container');
+            if (modal) {
+                modal.setAttribute('aria-hidden', 'true');
+                modal.classList.remove('show');
+            }
         });
     });
 });

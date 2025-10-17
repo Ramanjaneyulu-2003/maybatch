@@ -1,0 +1,26 @@
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid orange;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+td {
+    background-color: black;
+    color: white;
+}
+
+.edit, .delete {
+    color: orange;
+    cursor: pointer;
+}
