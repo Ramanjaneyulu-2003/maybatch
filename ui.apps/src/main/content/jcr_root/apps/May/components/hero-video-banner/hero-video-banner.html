@@ -1,0 +1,53 @@
+<div class="cmp-hero-video-banner" data-cmp-is="hero-video-banner" id="${component.id}">
+  <div class="cmp-hero-video-banner__video-wrapper">
+    <video
+      class="cmp-hero-video-banner__video"
+      preload="metadata"
+      muted
+      playsinline
+      poster="${poster}"
+      aria-label="${'Hero video banner' @ i18n}">
+      <sly data-sly-list.source="${sources}">
+        <source src="${source.src}" type="${source.type}" />
+      </sly>
+      <p>${'Your browser does not support video playback.' @ i18n}</p>
+    </video>
+
+    <!-- Play / Pause Button -->
+    <button
+      class="cmp-hero-video-banner__playpause"
+      aria-label="${'Play or Pause video' @ i18n}"
+      data-cmp-hook-hero-video-banner="playpause">
+      ▶
+    </button>
+  </div>
+
+  <!-- Transcript Toggle -->
+  <div class="cmp-hero-video-banner__transcript">
+    <button
+      class="cmp-hero-video-banner__transcript-toggle"
+      data-cmp-hook-hero-video-banner="transcriptToggle"
+      aria-expanded="false">
+      ${'Show Transcript' @ i18n}
+    </button>
+
+    <div class="cmp-hero-video-banner__transcript-content" data-cmp-hook-hero-video-banner="transcript">
+      <pre>${transcript}</pre>
+    </div>
+  </div>
+
+  <!-- CTA Buttons -->
+  <sly data-sly-test="${ctaList && !ctaList.isEmpty}">
+    <div class="cmp-hero-video-banner__ctas">
+      <sly data-sly-list.cta="${ctaList}">
+        <a class="cmp-hero-video-banner__cta" href="${cta.url}" target="${cta.target}">
+          ${cta.label}
+        </a>
+      </sly>
+    </div>
+  </sly>
+</div>
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='May'}">
+</sly>

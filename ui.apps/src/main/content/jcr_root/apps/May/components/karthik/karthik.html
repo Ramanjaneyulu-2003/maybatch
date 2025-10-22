@@ -1,5 +1,17 @@
+<h1>Key ETF trends on the rise</h1>
 
+  <div class="video-container">
+    <video id="myVideo" width="640" height="360" controls>
+      <source src="/content/dam/May/ramu/song.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-${properties.text}<br>
-${properties.des}<br>
-${properties.num}<br>
+    <!-- Overlay play button -->
+    <div class="play-circle" id="playBtn" role="button" aria-label="Play episode">
+      <div class="play-triangle"></div>
+    </div>
+  </div>
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='May'}">
+</sly>

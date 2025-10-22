@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Key ETF trends on the rise — Demo</title>
+
+  <style>
+    /* Reset-ish */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; }
+
+    /* Page background similar to screenshot (dark with subtle noise) */
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(ellipse at top left, #0f1724 0%, #0b0d11 50%, #0b0d11 100%);
+      color: #e6e6e6;
+      line-height: 1.45;
+      padding: 36px;
+    }
+
+    /* Container: main content with left margin and right sidebar */
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* Left column: article / player */
+    .article {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding: 28px;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(3,6,12,0.6);
+      min-height: 600px;
+    }
+
+    h1.page-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #fafafa;
+      font-weight: 600;
+      letter-spacing: 0.1px;
+    }
+
+    /* Video / hero placeholder */
+    .player {
+      background: linear-gradient(180deg,#5b3dfc,#3c2a9b); /* purple gradient */
+      border-radius: 6px;
+      position: relative;
+      height: 360px;
+      overflow: hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+    }
+
+    /* small play time chip in left bottom */
+    .player .time-chip {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      padding: 6px 10px;
+      font-size: 13px;
+      border-radius: 4px;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    /* large circular play icon */
+    .player .play-circle {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow: 0 8px 20px rgba(10,10,10,0.5);
+      transition: transform .16s ease;
+    }
+    .player .play-circle:active { transform: scale(.96); }
+    .player .play-triangle {
+      width: 0; height: 0;
+      border-left: 14px solid #3b3bff;
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      margin-left: 4px;
+    }
+
+    /* Transcript toggle row */
+    .controls {
+      margin-top: 12px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      font-size:14px;
+      color: #cfcfcf;
+    }
+    .controls .dot { width:8px; height:8px; background:#7b7b7b; border-radius:50%; display:inline-block; }
+
+    /* Episode description block */
+    .episode {
+      margin-top:18px;
+      background: rgba(255,255,255,0.02);
+      padding: 16px;
+      border-radius: 6px;
+      color: #d7d7d7;
+    }
+    .episode h3 {
+      font-size:16px;
+      margin-bottom: 8px;
+      color:#fff;
+    }
+    .episode p {
+      font-size: 14px;
+      opacity: .92;
+    }
+
+    /* Right sidebar */
+    .sidebar {
+      position: sticky;
+      top: 36px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      padding: 18px;
+      border-radius: 8px;
+      min-height: 200px;
+    }
+    .sidebar .panel-title { font-weight:600; margin-bottom:12px; color:#f1f1f1; }
+    .host {
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-top:8px;
+    }
+    .avatar {
+      width:44px; height:44px; border-radius:6px; background:#2b2b2b; display:inline-block;
+      box-shadow: inset 0 -2px 6px rgba(0,0,0,0.6);
+    }
+    .host .meta { font-size:13px; color:#cfcfcf; }
+
+    /* Footer / small notes */
+    footer {
+      text-align:center;
+      margin-top:20px;
+      font-size:12px;
+      color:#9a9a9a;
+    }
+
+    /* Responsive: stack columns under 880px */
+    @media (max-width: 880px) {
+      .wrap { grid-template-columns: 1fr; padding: 12px; }
+      .sidebar { position: static; }
+      .player { height: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <!-- LEFT: main content -->
+    <article class="article" aria-labelledby="page-title">
+      <h1 id="page-title" class="page-title">Key ETF trends on the rise</h1>
+
+      <!-- video area -->
+      <div class="player" aria-label="Podcast player visual">
+        <!-- purple visual area (image/video placeholder) -->
+        <!-- You could swap this for an actual <video> or <img> -->
+        <div class="play-circle" id="playBtn" role="button" aria-pressed="false" aria-label="Play episode">
+          <div class="play-triangle"></div>
+        </div>
+
+        <div class="time-chip" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" style="display:block">
+            <path fill="#ffd97a" d="M12 2a10 10 0 1 0 0.001 20.001A10 10 0 0 0 12 2zm1 11H7v-2h6v2z"></path>
+          </svg>
+          0:29
+        </div>
+      </div>
+
+      <div class="controls" aria-hidden="false">
+        <span class="dot" title="status"></span>
+        <div style="font-weight:600">Transcript</div>
+      </div>
+
+      <section class="episode" aria-labelledby="ep-heading">
+        <h3 id="ep-heading">Episode Description</h3>
+        <p>
+          Vice President and Head of ETFs, Alan Green is joined by Executive Director, The Canadian ETF Association,
+          and Head of Dynamic Funds, Mark Brisley, to discuss the recent industry ETF Exchange Conferences and the key
+          emerging themes. They discuss the evolving landscape of ETFs, including the growing momentum of actively
+          managed ETFs and the shifting focus from passive to active strategies. With the ETF industry surpassing
+          $1D trillion in assets, these industry leaders provide insights on the future of ETFs and the opportunities ahead.
+        </p>
+      </section>
+
+      <footer>
+        Transcript &middot; Episodes &middot; © Demo
+      </footer>
+    </article>
+
+    <!-- RIGHT: sidebar -->
+    <aside class="sidebar" aria-label="Related sidebar">
+      <div class="panel-title">Key details</div>
+
+      <div style="font-size:13px; color:#cfcfcf;">
+        Aug 14, 2025 &middot; 24 min
+      </div>
+
+      <div style="height:12px"></div>
+
+      <div class="panel-title" style="font-size:13px;">Hosts</div>
+      <div class="host">
+        <div class="avatar" aria-hidden="true"></div>
+        <div class="meta">
+          <div style="font-weight:600;color:#fff">Alan Green</div>
+          <div style="opacity:.88">Vice President & Head of ETFs</div>
+        </div>
+      </div>
+
+      <div style="height:14px"></div>
+
+      <div class="panel-title" style="font-size:13px;">Also on this site</div>
+      <div style="font-size:13px; color:#cfcfcf; margin-top:6px;">
+        Other episodes, transcripts, and show notes.
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    // Small interactivity for the Play button: show a simulated "playing" state
+    const playBtn = document.getElementById('playBtn');
+
+    function togglePlay() {
+      const pressed = playBtn.getAttribute('aria-pressed') === 'true';
+      playBtn.setAttribute('aria-pressed', String(!pressed));
+      if (!pressed) {
+        playBtn.style.boxShadow = '0 18px 40px rgba(12,10,40,0.6)';
+        // animate a quick pulse
+        playBtn.animate([
+          { transform: 'scale(1)' },
+          { transform: 'scale(1.04)' },
+          { transform: 'scale(1)' }
+        ], { duration: 420, easing: 'ease-out' })
+      } else {
+        playBtn.style.boxShadow = '0 8px 20px rgba(10,10,10,0.5)';
+      }
+    }
+    playBtn.addEventListener('click', togglePlay);
+  </script>
+</body>
+</html>
+
+<source src="/content/dam/May/ramu/song.mp4" type="video/mp4" />
+
+
+
+
+

@@ -1,0 +1,54 @@
+
+.cmp-hero-video-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.cmp-hero-video-banner__video-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.cmp-hero-video-banner__playpause {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cmp-hero-video-banner__transcript-content {
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.cmp-hero-video-banner__transcript-content.is-open {
+  display: block;
+}
+
+.cmp-hero-video-banner__ctas {
+  display: flex;
+  gap: 1rem;
+}
+.cmp-hero-video-banner__cta {
+  background: #005eb8;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.cmp-hero-video-banner__cta:hover {
+  background: #004a96;
+}
