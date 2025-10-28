@@ -99,6 +99,6 @@ public class AddExpiryDateTask10 implements WorkflowProcess {
 
     private ResourceResolver getServiceResourceResolver() throws LoginException {
         return resourceResolverFactory.getServiceResourceResolver(
-                Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, "naveenkumar"));
+                Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, "npservice"));
     }
 }

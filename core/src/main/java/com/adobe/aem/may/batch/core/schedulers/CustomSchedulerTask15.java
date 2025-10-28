@@ -41,7 +41,7 @@ public class CustomSchedulerTask15 implements Runnable {
         String apiToken() default "67888";
 
         @AttributeDefinition(name = "Page Path", description = "Page path to validate")
-        String pagePath() default "/content/Demo/workflow";
+        String pagePath() default "/content/May/workflow";
     }
 
     private String cronExpression;

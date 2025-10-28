@@ -106,7 +106,7 @@ protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse 
 
     try {
         Map<String, Object> param = new HashMap<>();
-        param.put(ResourceResolverFactory.SUBSERVICE, "npservice");
+        param.put(ResourceResolverFactory.SUBSERVICE, "ramanji");
         resourceResolver = resolverFactory.getServiceResourceResolver(param);
         session = resourceResolver.adaptTo(Session.class);
 

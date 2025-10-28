@@ -150,7 +150,7 @@ public class PageSchedulerTask11 implements Runnable {
 
     private ResourceResolver getServiceResourceResolver() throws Exception {
         Map<String, Object> params = new HashMap<>();
-        params.put(ResourceResolverFactory.SUBSERVICE, "naveenkumar");
+        params.put(ResourceResolverFactory.SUBSERVICE, "npservice");
         return resourceResolverFactory.getServiceResourceResolver(params);
     }
 }

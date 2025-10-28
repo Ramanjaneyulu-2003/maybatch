@@ -19,12 +19,12 @@ import java.util.Map;
 @Component(immediate = true, service = EventHandler.class, property = {
         EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/ResourceAdded",
         EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/ResourceChanged",
-        EventConstants.EVENT_FILTER + "=(path=/content/May/us/work/*)"
+        EventConstants.EVENT_FILTER + "=(path=/content/May/us/*)"
 })
 public class PageEventHandlerTask12 implements EventHandler {
 
     private static final Logger LOG = LoggerFactory.getLogger(PageEventHandlerTask12.class);
-    private static final String WORKFLOW_MODEL_PATH = "/var/workflow/models/launcher";
+    private static final String WORKFLOW_MODEL_PATH = "/var/workflow/models/ramu";
 
     @Reference
     private ResourceResolverFactory resourceResolverFactory;

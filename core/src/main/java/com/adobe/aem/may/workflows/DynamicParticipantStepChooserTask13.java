@@ -59,7 +59,7 @@ public class DynamicParticipantStepChooserTask13 implements ParticipantStepChoos
 
         try {
             // Example logic to fetch participants dynamically
-            if (payloadPath.startsWith("/content/may")) {
+            if (payloadPath.startsWith("/content/May")) {
                 participants.add("content-reviewer");
                 participants.add("content-editor");
             } else if (payloadPath.startsWith("/content/my-site/fr")) {

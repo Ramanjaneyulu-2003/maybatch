@@ -27,7 +27,7 @@ public class PageCreationEventHandlerTask10 implements EventHandler {
     @Reference
     private ResourceResolverFactory resourceResolverFactory;
 
-    private static final String WORKFLOW_MODEL_PATH = "/var/workflow/models/workflow";
+    private static final String WORKFLOW_MODEL_PATH = "/var/workflow/models/ramu";
 
     @Override
     public void handleEvent(Event event) {
@@ -70,6 +70,6 @@ public class PageCreationEventHandlerTask10 implements EventHandler {
 
     private ResourceResolver getServiceResourceResolver() throws LoginException {
         return resourceResolverFactory.getServiceResourceResolver(
-                Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, "naveenkumar"));
+                Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, "npservice"));
     }
 }

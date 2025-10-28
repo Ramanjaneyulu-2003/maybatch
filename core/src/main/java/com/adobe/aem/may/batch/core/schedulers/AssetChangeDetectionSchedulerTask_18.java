@@ -104,7 +104,7 @@ public class AssetChangeDetectionSchedulerTask_18 implements Runnable {
 
     private ResourceResolver getServiceResourceResolver() {
         Map<String, Object> params = new HashMap<>();
-        params.put(ResourceResolverFactory.SUBSERVICE, "anil");
+        params.put(ResourceResolverFactory.SUBSERVICE, "npservice");
 
         try {
             return resourceResolverFactory.getServiceResourceResolver(params);
